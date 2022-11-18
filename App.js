@@ -82,7 +82,7 @@ export default function App() {
   return (
     <Camera style={styles.container} ref={cameraRef}>
       <View style={styles.buttonContainer}>
-        <Button title={isRecording ? "Stop Recording" : "Record Video"} onPress={isRecording ? stopRecording : recordVideo} />
+        <Button title={isRecording ? "⏹️" : "⏺️"} onPress={isRecording ? stopRecording : recordVideo} />
       </View>
     </Camera>
   );
@@ -95,7 +95,8 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
   buttonContainer: {
-    backgroundColor: "#fff",
+    backgroundColor: "transparent",
+    fontSize: 38,
     alignSelf: "flex-end"
   },
   video: {
