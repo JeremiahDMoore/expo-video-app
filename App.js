@@ -1,4 +1,4 @@
-import { StyleSheet, Text, View, Button, SafeAreaView } from 'react-native';
+import { StyleSheet, Text, View, Button, TouchableOpacity, SafeAreaView } from 'react-native';
 import { useEffect, useState, useRef } from 'react';
 import { Camera } from 'expo-camera';
 import { Video } from 'expo-av';
@@ -35,7 +35,7 @@ export default function App() {
     setIsRecording(true);
     let options = {
       quality: "1080p",
-      maxDuration: 60,
+      maxDuration: 36000,
       mute: false
     };
 
@@ -80,27 +80,44 @@ export default function App() {
   }
 
   return (
+    
+    
     <Camera style={styles.container} ref={cameraRef}>
+     <Text style={styles.appTitle}>Security   Camera</Text>
       <View style={styles.buttonContainer}>
-        <Button title={isRecording ? "⏹️" : "⏺️"} onPress={isRecording ? stopRecording : recordVideo} />
+        <TouchableOpacity onPress={isRecording ? stopRecording : recordVideo} >
+          <Text style={styles.emoji}>{isRecording ? "⏹️" : "⏺️"}</Text>
+          {/* title={isRecording ? "⏹️" : "⏺️"}  */}
+        </TouchableOpacity>         
       </View>
     </Camera>
+    
   );
 }
 
 const styles = StyleSheet.create({
+  appTitle: {
+    fontSize: 50,
+    color: '#FFFFFF21',
+    fontWeight: 'bold',
+    textAlign: 'center',
+    marginTop: 0,
+  },
   container: {
     flex: 1,
     alignItems: 'center',
     justifyContent: 'center',
   },
+  
   buttonContainer: {
     backgroundColor: "transparent",
-    fontSize: 38,
     alignSelf: "flex-end"
   },
   video: {
     flex: 1,
     alignSelf: "stretch"
+  },
+  emoji: {
+    fontSize: 48
   }
 });
