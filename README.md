@@ -1,5 +1,5 @@
 # Simple Video App
-Cross platform mobile app for iOS or Android. Takes and shares video using native functions. Created with React Native and Expo libraries. Requires Expo app to run on mobile device. Creates video files in the app's local storage.Delete video option, Share video option.
+Cross platform mobile app for iOS or Android. Takes and shares video using native functions. Created with React Native and Expo libraries. Requires Expo app to run on mobile device. Creates video files in the app's local storage. Delete video option, Share video option.
  
 ## Dependencies:
 ```
@@ -12,6 +12,6 @@ expo install expo-av
 ```
     
 ## To run the app:
- - Use Expo Go mobile app for Android or iOS
- - ``` expo start ```
- - scan QR code to build the app
+ - Use Expo Go mobile app for Android or iOS (web version unavailable) available on Play and App stores.
+ - ``` expo start ``` from the command line
+ - scan QR code from your phone to build the app
