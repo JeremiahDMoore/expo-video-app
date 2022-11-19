@@ -1,5 +1,5 @@
 # Simple Video App
-Cross platform mobile app for iOS or Android. Takes and shares video using native functions. Created with React Native and Expo libraries. 
+Cross platform mobile app for iOS or Android. Takes and shares video using native functions. Created with React Native and Expo libraries. Requires Expo app to run on mobile device.
  
 ## Dependencies:
 ```
