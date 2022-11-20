@@ -21,6 +21,13 @@
       "supportsTablet": true
     },
     "android": {
+      "package": "com.videoapp",
+      "versionCode": 1,
+      "permissions": [
+        "READ_EXTERNAL_STORAGE", "AUDIO_RECORDING",
+        "CAMERA", "WRITE_EXTERNAL_STORAGE", "CAMERA_ROLL"
+      ],
+
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#FFFFFF"

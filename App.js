@@ -1,6 +1,6 @@
 import { StyleSheet, Text, View, Button, TouchableOpacity, SafeAreaView } from 'react-native';
 import { useEffect, useState, useRef } from 'react';
-import { Camera } from 'expo-camera';
+import { AutoFocus, Camera } from 'expo-camera';
 import { Video } from 'expo-av';
 import { shareAsync } from 'expo-sharing';
 import * as MediaLibrary from 'expo-media-library';
@@ -69,25 +69,23 @@ export default function App() {
           style={styles.video}
           source={{uri: video.uri}}
           useNativeControls
-          resizeMode='contain'
+          resizeMode="contain"
           isLooping
         />
         <Button title="Share" onPress={shareVideo} />
         {hasMediaLibraryPermission ? <Button title="Save" onPress={saveVideo} /> : undefined}
         <Button title="Discard" onPress={() => setVideo(undefined)} />
+        <Text> </Text>
       </SafeAreaView>
     );
   }
 
-  return (
-    
+  return (   
     
     <Camera style={styles.container} ref={cameraRef}>
-     <Text style={styles.appTitle}>Security   Camera</Text>
       <View style={styles.buttonContainer}>
         <TouchableOpacity onPress={isRecording ? stopRecording : recordVideo} >
           <Text style={styles.emoji}>{isRecording ? "⏹️" : "⏺️"}</Text>
-          {/* title={isRecording ? "⏹️" : "⏺️"}  */}
         </TouchableOpacity>         
       </View>
     </Camera>
@@ -96,22 +94,20 @@ export default function App() {
 }
 
 const styles = StyleSheet.create({
-  appTitle: {
-    fontSize: 50,
-    color: '#FFFFFF21',
-    fontWeight: 'bold',
-    textAlign: 'center',
-    marginTop: 0,
-  },
+
   container: {
     flex: 1,
-    alignItems: 'center',
-    justifyContent: 'center',
+    alignItems: "center",
+    justifyContent: "center",
   },
-  
   buttonContainer: {
     backgroundColor: "transparent",
-    alignSelf: "flex-end"
+    alignSelf: "center",
+    flexDirection: "row",
+    position: "absolute",
+    bottom: 0,
+    marginBottom: 36
+
   },
   video: {
     flex: 1,
