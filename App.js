@@ -3,6 +3,8 @@ import { useEffect, useState, useRef } from 'react';
 import { AutoFocus, Camera } from 'expo-camera';
 import { Video } from 'expo-av';
 import { shareAsync } from 'expo-sharing';
+import TitleBar from './components/TitleBar';
+
 import * as MediaLibrary from 'expo-media-library';
 
 export default function App() {
@@ -56,7 +58,7 @@ export default function App() {
         setVideo(undefined);
       });
     };
-
+// define the function to save the video to the media library
     let saveVideo = () => {
       MediaLibrary.saveToLibraryAsync(video.uri).then(() => {
         setVideo(undefined);
@@ -65,16 +67,17 @@ export default function App() {
 
     return (
       <SafeAreaView style={styles.container}>
-        <Video
+       
+        <Video // display the video on loop with sound on
           style={styles.video}
           source={{uri: video.uri}}
           useNativeControls
           resizeMode="contain"
-          isLooping
-        />
-        <Button title="Share" onPress={shareVideo} />
-        {hasMediaLibraryPermission ? <Button title="Save" onPress={saveVideo} /> : undefined}
-        <Button title="Discard" onPress={() => setVideo(undefined)} />
+          isLooping         
+        />        
+        <TouchableOpacity style={styles.btn} onPress={shareVideo}><Text>Share</Text></TouchableOpacity> 
+        {hasMediaLibraryPermission ? <TouchableOpacity style={styles.btn} onPress={saveVideo} ><Text>Save</Text></TouchableOpacity> : undefined}
+        <TouchableOpacity style={styles.btn} onPress={() => setVideo(undefined)} ><Text>Delete</Text></TouchableOpacity>
         <Text> </Text>
       </SafeAreaView>
     );
@@ -85,6 +88,7 @@ export default function App() {
     <Camera style={styles.container} ref={cameraRef}>
       <View style={styles.buttonContainer}>
         <TouchableOpacity onPress={isRecording ? stopRecording : recordVideo} >
+        <TitleBar title="DashCam Extra" />
           <Text style={styles.emoji}>{isRecording ? "⏹️" : "⏺️"}</Text>
         </TouchableOpacity>         
       </View>
@@ -98,15 +102,27 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     alignItems: "center",
-    justifyContent: "center",
+    justifyContent: "center",    
   },
+  btn: {
+    backgroundColor: "#999999",
+    color: "#fff",
+    padding: 10,
+    borderRadius: 5,
+    margin: 10,
+    width: 100,
+    alignItems: "center",
+     
+  },
+
   buttonContainer: {
-    backgroundColor: "transparent",
+    backgroundColor: "#FFFFFF99",
+    width: "100%",
     alignSelf: "center",
     flexDirection: "row",
     position: "absolute",
     bottom: 0,
-    marginBottom: 36
+    justifyContent: "space-around",
 
   },
   video: {
@@ -114,6 +130,8 @@ const styles = StyleSheet.create({
     alignSelf: "stretch"
   },
   emoji: {
-    fontSize: 48
+    textAlign: "center",
+    fontSize: 48,
+    marginBottom: 20,
   }
 });
