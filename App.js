@@ -1,4 +1,4 @@
-import { StyleSheet, Text, View, Button, TouchableOpacity, SafeAreaView } from 'react-native';
+import { StyleSheet, Text, View, Image, TouchableOpacity, SafeAreaView } from 'react-native';
 import { useEffect, useState, useRef } from 'react';
 import { AutoFocus, Camera } from 'expo-camera';
 import { Video } from 'expo-av';
@@ -86,13 +86,13 @@ export default function App() {
   return (   
     
     <Camera style={styles.container} ref={cameraRef}>
-      <View style={styles.buttonContainer}>
-        <TouchableOpacity onPress={isRecording ? stopRecording : recordVideo} >
-        <TitleBar title="DashCam Extra" />
-          <Text style={styles.emoji}>{isRecording ? "⏹️" : "⏺️"}</Text>
-        </TouchableOpacity>         
-      </View>
-    </Camera>
+    <View style={styles.buttonContainer}>
+      <TouchableOpacity onPress={isRecording ? stopRecording : recordVideo} >
+      <TitleBar title="DashCam Extra" />
+        <Text style={styles.emoji}>{isRecording ? "⏹️" : "⏺️"}</Text>
+      </TouchableOpacity>         
+    </View>
+  </Camera>
     
   );
 }
@@ -111,8 +111,7 @@ const styles = StyleSheet.create({
     borderRadius: 5,
     margin: 10,
     width: 100,
-    alignItems: "center",
-     
+    alignItems: "center",     
   },
 
   buttonContainer: {
@@ -132,6 +131,6 @@ const styles = StyleSheet.create({
   emoji: {
     textAlign: "center",
     fontSize: 48,
-    marginBottom: 20,
+    marginBottom: 20,    
   }
 });
