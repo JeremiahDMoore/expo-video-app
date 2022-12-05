@@ -89,11 +89,11 @@ export default function App() {
     <View style={styles.buttonContainer}>
       <TouchableOpacity onPress={isRecording ? stopRecording : recordVideo} >
       <TitleBar title="DashCam Extra" />
-        <Text style={styles.emoji}>{isRecording ? "⏹️" : "⏺️"}</Text>
+        <Text style={styles.emoji}>{isRecording ? "🟥" : "🔴"}</Text>
       </TouchableOpacity>         
     </View>
   </Camera>
-    
+
   );
 }
 
@@ -110,10 +110,9 @@ const styles = StyleSheet.create({
     padding: 10,
     borderRadius: 5,
     margin: 10,
-    width: 100,
+    width: "90%",
     alignItems: "center",     
   },
-
   buttonContainer: {
     backgroundColor: "#FFFFFF99",
     width: "100%",
@@ -122,7 +121,6 @@ const styles = StyleSheet.create({
     position: "absolute",
     bottom: 0,
     justifyContent: "space-around",
-
   },
   video: {
     flex: 1,
