@@ -75,9 +75,9 @@ export default function App() {
           resizeMode="contain"
           isLooping         
         />        
-        <TouchableOpacity style={styles.btn} onPress={shareVideo}><Text>Share</Text></TouchableOpacity> 
-        {hasMediaLibraryPermission ? <TouchableOpacity style={styles.btn} onPress={saveVideo} ><Text>Save</Text></TouchableOpacity> : undefined}
-        <TouchableOpacity style={styles.btn} onPress={() => setVideo(undefined)} ><Text>Delete</Text></TouchableOpacity>
+        <TouchableOpacity style={styles.btn} onPress={shareVideo}><Text style={{ color: '#CFCFCF'}}>Share</Text></TouchableOpacity> 
+        {hasMediaLibraryPermission ? <TouchableOpacity style={styles.btn} onPress={saveVideo} ><Text style={{ color: '#CFCFCF'}}>Save</Text></TouchableOpacity> : undefined}
+        <TouchableOpacity style={styles.btn} onPress={() => setVideo(undefined)} ><Text style={{ color: '#CFCFCF'}}>Delete</Text></TouchableOpacity>
         <Text> </Text>
       </SafeAreaView>
     );
@@ -88,7 +88,7 @@ export default function App() {
     <Camera style={styles.container} ref={cameraRef}>
     <View style={styles.buttonContainer}>
       <TouchableOpacity onPress={isRecording ? stopRecording : recordVideo} >
-      <TitleBar title="DashCam Extra" />
+      <TitleBar title="DashCam" />
         <Text style={styles.emoji}>{isRecording ? "🟥" : "🔴"}</Text>
       </TouchableOpacity>         
     </View>
@@ -102,11 +102,11 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     alignItems: "center",
-    justifyContent: "center",    
+    justifyContent: "center",  
+    backgroundColor: "#666",  
   },
   btn: {
-    backgroundColor: "#999999",
-    color: "#fff",
+    backgroundColor: "#0047AB",
     padding: 10,
     borderRadius: 5,
     margin: 10,
@@ -114,7 +114,7 @@ const styles = StyleSheet.create({
     alignItems: "center",     
   },
   buttonContainer: {
-    backgroundColor: "#FFFFFF99",
+    backgroundColor: "#0047AB",
     width: "100%",
     alignSelf: "center",
     flexDirection: "row",

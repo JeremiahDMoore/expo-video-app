@@ -13,9 +13,9 @@ const styles = StyleSheet.create({
     },
     title: {
         fontSize: 32,
-        color: "#52575D",
+        color: "#8f8f8f",
         fontWeight: "bold",
-        fontStyle: "italic",
+        
        
     },
 });
