@@ -1,6 +1,6 @@
 {
   "expo": {
-    "name": "video-app",
+    "name": "dash-video-app-aum",
     "slug": "video-app",
     "version": "1.0.0",
     "orientation": "portrait",
@@ -21,20 +21,27 @@
       "supportsTablet": true
     },
     "android": {
-      "package": "com.videoapp",
+      "package": "com.dashcam.acesupmedia",
       "versionCode": 1,
       "permissions": [
-        "READ_EXTERNAL_STORAGE", "AUDIO_RECORDING",
-        "CAMERA", "WRITE_EXTERNAL_STORAGE", "CAMERA_ROLL"
+        "READ_EXTERNAL_STORAGE",
+        "AUDIO_RECORDING",
+        "CAMERA",
+        "WRITE_EXTERNAL_STORAGE",
+        "CAMERA_ROLL"
       ],
-
       "adaptiveIcon": {
-        "foregroundImage": "./assets/adaptive-icon.png",
+        "foregroundImage": "./assets/icon.png",
         "backgroundColor": "#FFFFFF"
       }
     },
     "web": {
       "favicon": "./assets/favicon.png"
+    },
+    "extra": {
+      "eas": {
+        "projectId": "4fcee15a-1f6b-4274-9f0b-d088e99c618e"
+      }
     }
   }
 }
