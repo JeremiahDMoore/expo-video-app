@@ -17,3 +17,4 @@ expo install expo-av
  - scan QR code from your phone to build the app
 
  11/22/22 - App is working on iOS 15.7.1 iPhone 13 pro and Android 11 Google Pixel 4
+ 12/10/22 - App is live on Google Play for open testing
