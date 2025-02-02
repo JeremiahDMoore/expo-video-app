@@ -1,20 +1,52 @@
-# Simple Video App
-Cross platform mobile app for iOS or Android. Takes and shares video using native functions. Created with React Native and Expo libraries. Requires Expo app to run on mobile device. Creates video files in the app's local storage. Delete video option, Share video option.
- 
-## Dependencies:
-```
-npm install expo
-npm install react-native 0.70.5
-expo install expo-camera
-expo install expo-media-library
-expo install expo-sharing
-expo install expo-av 
-```
-   
-## To run the app:
- - Use Expo Go mobile app for Android or iOS (web version unavailable) available on Play and App stores.
- - ``` expo start ``` from the command line
- - scan QR code from your phone to build the app
+# Expo Video App
 
- 11/22/22 - App is working on iOS 15.7.1 iPhone 13 pro and Android 11 Google Pixel 4
- 12/10/22 - App is live on Google Play for open testing
+A cross-platform mobile application built with React Native and Expo that allows users to record, save, and share videos using native device functionalities.
+
+## Features
+
+- **Record Video**: Capture videos using the device's camera.
+- **Save Video**: Store recorded videos in the app's local storage.
+- **Share Video**: Share videos through other applications.
+- **Delete Video**: Remove videos from the app's storage.
+
+## Technologies Used
+
+- **React Native**: Framework for building native apps using React.
+- **Expo**: A platform for making React Native development easier.
+- **Expo Camera**: Module for accessing the device's camera.
+- **Expo Media Library**: Module for accessing the device's media library.
+- **Expo Sharing**: Module for sharing content with other apps.
+- **Expo AV**: Module for audio and video playback.
+
+## Installation
+
+To run this application locally:
+
+1. **Clone the Repository**:
+   ```bash
+   git clone https://github.com/JeremiahDMoore/expo-video-app.git
+   cd expo-video-app
+   ```
+
+2. **Install Dependencies**:
+   Ensure you have [Node.js](https://nodejs.org/) and [Expo CLI](https://docs.expo.dev/get-started/installation/) installed. Then, run:
+   ```bash
+   npm install
+   ```
+
+3. **Start the Application**:
+   ```bash
+   expo start
+   ```
+   Use the Expo Go app on your mobile device to scan the QR code and run the application.
+
+## Usage
+
+- **Record a Video**: Press the "Record" button to start and stop recording.
+- **View Videos**: Access the list of saved videos within the app.
+- **Share a Video**: Select a video and choose the "Share" option.
+- **Delete a Video**: Select a video and choose the "Delete" option.
+
+## Acknowledgments
+
+This application was developed to demonstrate the use of React Native and Expo for building cross-platform video recording and sharing applications.
